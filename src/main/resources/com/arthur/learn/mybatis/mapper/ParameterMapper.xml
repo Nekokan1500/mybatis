@@ -12,7 +12,19 @@
   <select id="checkLogin" resultType="User">
     Select * from t_user where name = #{arg0} and password = #{arg1}
     <!-- alternatively,
-      Select * from t_user where name = #{arg0} and password = #{param2}
+      Select * from t_user where name = #{param1} and password = #{param2}
+    -->
+  </select>
+  <select id="checkLoginByMap" resultType="User">
+    Select * from t_user where name = #{name} and password = #{password}
+  </select>
+  <insert id="insertUser">
+    INSERT INTO t_user VALUES (null, #{name}, #{password}, #{address}, #{phone})
+  </insert>
+  <select id="checkLoginByParam" resultType="User">
+    Select * from t_user where name = #{name} and password = #{password}
+    <!-- alternatively,
+      Select * from t_user where name = #{param1} and password = #{param2}
     -->
   </select>
 </mapper>
