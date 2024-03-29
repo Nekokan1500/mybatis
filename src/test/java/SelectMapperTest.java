@@ -25,4 +25,26 @@ public class SelectMapperTest {
         users.forEach(System.out::println);
     }
 
+    @Test
+    public void testGetUserCount() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        SelectMapper selectMapper = sqlSession.getMapper(SelectMapper.class);
+        int count = selectMapper.getUserCount();
+        System.out.println(count);
+    }
+
+    @Test
+    public void testGetUserByIdToMap() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        SelectMapper selectMapper = sqlSession.getMapper(SelectMapper.class);
+        System.out.println(selectMapper.getUserByIdToMap(1));
+    }
+
+    @Test
+    public void testGetAllUsersToMap() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        SelectMapper selectMapper = sqlSession.getMapper(SelectMapper.class);
+        //System.out.println(selectMapper.getAllUsersToMap());
+        System.out.println(selectMapper.getAllUsersToMap2());
+    }
 }
