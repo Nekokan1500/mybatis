@@ -7,4 +7,8 @@ public interface DeptMapper {
 
     Dept getDeptById(@Param("did")Integer did);
 
+    Dept getDeptAndEmps(@Param("did")Integer did);
+
+    Dept getDeptAndEmpsStepOne(@Param("did")Integer did);
+
 }

@@ -1,9 +1,13 @@
 package com.arthur.learn.mybatis.entity;
 
+import java.util.List;
+
 public class Dept {
 
     private Integer did;
     private String deptName;
+
+    private List<Emp> emps;
     
     public Dept() {
     }
@@ -31,7 +35,16 @@ public class Dept {
 
     @Override
     public String toString() {
-        return "Dept [did=" + did + ", deptName=" + deptName + "]";
+        return "Dept [did=" + did + ", deptName=" + deptName + ", emps=" + emps + "]";
+    }
+
+    public List<Emp> getEmps() {
+        return emps;
+    }
+
+
+    public void setEmps(List<Emp> emps) {
+        this.emps = emps;
     }
 
 }

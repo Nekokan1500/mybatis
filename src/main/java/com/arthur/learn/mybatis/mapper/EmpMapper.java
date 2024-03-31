@@ -19,4 +19,6 @@ public interface EmpMapper {
     //  Step-wise query
     // step1: get emp by eid
     Emp getEmpAndDeptByStepOne(@Param("eid")Integer eid);
+
+    List<Emp> getAllEmpsByDeptId(@Param("did")Integer did);
 }
