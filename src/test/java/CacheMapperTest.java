@@ -42,10 +42,13 @@ public class CacheMapperTest {
             InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
             SqlSession sqlSession1 = sqlSessionFactory.openSession(true);
-            SqlSession sqlSession2 = sqlSessionFactory.openSession(true);
             CacheMapper mapper = sqlSession1.getMapper(CacheMapper.class);
-            mapper.getEmpById(1);
-
+            System.out.println(mapper.getEmpById(1));
+            sqlSession1.close();
+            SqlSession sqlSession2 = sqlSessionFactory.openSession(true);
+            CacheMapper mapper2 = sqlSession2.getMapper(CacheMapper.class);
+            System.out.println(mapper2.getEmpById(1));
+            sqlSession2.close();
         }
         catch(IOException ex){
             ex.printStackTrace();

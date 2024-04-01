@@ -19,6 +19,9 @@
     -->
     <package name="com.arthur.learn.mybatis.entity" />
   </typeAliases>
+  <plugins>
+    <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+  </plugins>
   <environments default="development">
     <environment id="development">
       <transactionManager type="JDBC"/>
